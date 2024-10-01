@@ -10,24 +10,30 @@ import SwiftUI
 struct SettingsView: View {
     
     @State private var isToggleOn = false
-    @State private var value = 50.0
+//    @State private var value = 50.0
     @State private var isEditing = false
     @State private var selectedPicker = "text_1"
+    
+    @Environment(\.colorScheme) var colorScheme
+    @Binding var titleOn: Bool
+    @Binding var rowHeight: Double
     
     let pickerArray = ["text_1", "text_2", "text_3"]
     
     var body: some View {
         Form {
             Section(header: Text("Text section")) {
-                Text("text")
+                Text(colorScheme == .light ? "Light Theme enabled" : "Dark Theme enabled")
             }
+            
             Section(header: Text("Toggle section")) {
-
-                    Toggle(isOn: $isToggleOn) {
-                        Text(isToggleOn ? "ON" : "OFF")
+                Toggle("Show title list", isOn: $titleOn)
+                if titleOn {
+                    Text("Navigation title enabled")
+                    
                 }
             }
-
+            
             Section(header: Text("Picker section")) {
                 VStack {
                     Text("Выберите из списка:")
@@ -39,22 +45,27 @@ struct SettingsView: View {
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
-
+                    
                     Text("Выбранный элемент: \(selectedPicker)")
                         .font(.subheadline)
                 }
             }
-  
+            
             Section(header: Text("Slider section")) {
                 VStack {
                     Slider (
-                        value: $value,
-                        in: 0...100,
-                        step: 1
+                        value: $rowHeight,
+                        in: 40...80,
+                        step: 1,
+                        onEditingChanged: { editing in
+                            isEditing = editing
+                        }
                     )
                     
-                    Text("\(value)")
-                        .foregroundColor(isEditing ? .red : .blue)
+                    Text("\(Int(rowHeight))")
+                    if isEditing {
+                        InfoRow(post: PostData.posts[1], rowHeight: $rowHeight)
+                    }
                 }
             }
         }
@@ -63,6 +74,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(titleOn: .constant(true), rowHeight: .constant(40))
+//                SettingsView(titleOn: .constant(false))
     }
 }

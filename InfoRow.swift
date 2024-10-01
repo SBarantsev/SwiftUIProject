@@ -10,13 +10,14 @@ import SwiftUI
 struct InfoRow: View {
     
     let post: Post
+    @Binding var rowHeight: Double
     
     var body: some View {
         HStack {
             post.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
+                .frame(width: $rowHeight.wrappedValue, height: $rowHeight.wrappedValue)
             Text(post.title)
         }
     }
@@ -24,6 +25,6 @@ struct InfoRow: View {
 
 struct InfoRow_Previews: PreviewProvider {
     static var previews: some View {
-        InfoRow(post: PostData.posts[1])
+        InfoRow(post: PostData.posts[1], rowHeight: .constant(40))
     }
 }

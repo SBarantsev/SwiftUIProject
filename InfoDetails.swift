@@ -23,7 +23,7 @@ struct InfoDetails: View {
             }
             .padding()
         }
-        .navigationTitle(post.title)
+//        .navigationTitle(post.title)
     }
 }
 

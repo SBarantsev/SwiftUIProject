@@ -9,6 +9,9 @@ import SwiftUI
 
 struct InfoView: View {
     
+    var titleOn: Bool
+    @Binding var rowHeight: Double
+    
     let posts: [Post]
     
     var body: some View {
@@ -16,16 +19,19 @@ struct InfoView: View {
         NavigationView {
             List(posts, id: \.id) { post in
                 NavigationLink(destination: InfoDetails(post: post)) {
-                    InfoRow(post: post)
+                    InfoRow(post: post, rowHeight: $rowHeight)
                 }
             }
             .navigationTitle("Top films")
+            .listStyle(.plain)
+            .toolbar(titleOn ? .visible : .hidden)
         }
     }
 }
 
 struct InfoView_Previews: PreviewProvider {
+
     static var previews: some View {
-        InfoView(posts: PostData.posts)
+        InfoView(titleOn: false, rowHeight: .constant(40), posts: PostData.posts)
     }
 }
