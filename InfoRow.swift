@@ -9,21 +9,32 @@ import SwiftUI
 
 struct InfoRow: View {
     
-    let post: Post
+    let post: Film
+    @Binding var rowHeight: Double
     
     var body: some View {
         HStack {
             post.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-            Text(post.title)
+                .frame(width: $rowHeight.wrappedValue, height: $rowHeight.wrappedValue)
+            
+            VStack(alignment: .leading) {
+                Text(post.title)
+                    .font(.title3)
+                    
+                if post.isWatched {
+                    Text("Просмотрено")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+            }
         }
     }
 }
 
 struct InfoRow_Previews: PreviewProvider {
     static var previews: some View {
-        InfoRow(post: PostData.posts[1])
+        InfoRow(post: FilmStore().films[1], rowHeight: .constant(40))
     }
 }

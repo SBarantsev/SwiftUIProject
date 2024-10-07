@@ -8,19 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("titleOn") private var titleOn = true
+    @AppStorage("rowHeight") var rowHeight: Double = 40.0
+    @StateObject var filmStore = FilmStore()
+    
     var body: some View {
         TabView() {
-            InfoView(posts: PostData.posts)
+            InfoView(titleOn: titleOn, rowHeight: $rowHeight, posts: FilmStore().films)
                 .tabItem {
                     Label("Info", systemImage: "film.circle")
                 }
             
-            HelloView()
+            QuizView()
                 .tabItem {
-                    Label("Hello", systemImage: "face.smiling")
+                    Label("Quiz", systemImage: "questionmark.video")
                 }
             
-            SettingsView()
+            SettingsView(titleOn: $titleOn, rowHeight: $rowHeight)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

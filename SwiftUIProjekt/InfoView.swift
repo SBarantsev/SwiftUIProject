@@ -9,23 +9,29 @@ import SwiftUI
 
 struct InfoView: View {
     
-    let posts: [Post]
+    var titleOn: Bool
+    @Binding var rowHeight: Double
+    
+    let posts: [Film]
     
     var body: some View {
         
         NavigationView {
             List(posts, id: \.id) { post in
                 NavigationLink(destination: InfoDetails(post: post)) {
-                    InfoRow(post: post)
+                    InfoRow(post: post, rowHeight: $rowHeight)
                 }
             }
             .navigationTitle("Top films")
+            .listStyle(.plain)
+            .toolbar(titleOn ? .visible : .hidden)
         }
     }
 }
 
 struct InfoView_Previews: PreviewProvider {
+
     static var previews: some View {
-        InfoView(posts: PostData.posts)
+        InfoView(titleOn: false, rowHeight: .constant(40), posts: FilmStore().films)
     }
 }
