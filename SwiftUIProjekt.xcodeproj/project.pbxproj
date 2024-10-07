@@ -12,9 +12,9 @@
 		A53A58F42CA4B74500A46046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53A58F32CA4B74500A46046 /* Assets.xcassets */; };
 		A53A58F72CA4B74500A46046 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53A58F62CA4B74500A46046 /* Preview Assets.xcassets */; };
 		A53A59022CA60C0700A46046 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59012CA60C0700A46046 /* InfoView.swift */; };
-		A53A59042CA60C7700A46046 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59032CA60C7700A46046 /* HelloView.swift */; };
+		A53A59042CA60C7700A46046 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59032CA60C7700A46046 /* QuizView.swift */; };
 		A53A59062CA60CC200A46046 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59052CA60CC200A46046 /* SettingsView.swift */; };
-		A53A59082CA7596500A46046 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59072CA7596500A46046 /* Post.swift */; };
+		A53A59082CA7596500A46046 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59072CA7596500A46046 /* Data.swift */; };
 		A53A590A2CA9EC4500A46046 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A59092CA9EC4500A46046 /* InfoRow.swift */; };
 		A53A590C2CA9F00500A46046 /* InfoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A590B2CA9F00500A46046 /* InfoDetails.swift */; };
 /* End PBXBuildFile section */
@@ -26,9 +26,9 @@
 		A53A58F32CA4B74500A46046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A53A58F62CA4B74500A46046 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A53A59012CA60C0700A46046 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		A53A59032CA60C7700A46046 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
+		A53A59032CA60C7700A46046 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		A53A59052CA60CC200A46046 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A53A59072CA7596500A46046 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A53A59072CA7596500A46046 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A53A59092CA9EC4500A46046 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 		A53A590B2CA9F00500A46046 /* InfoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,7 +49,7 @@
 			children = (
 				A53A590B2CA9F00500A46046 /* InfoDetails.swift */,
 				A53A59092CA9EC4500A46046 /* InfoRow.swift */,
-				A53A59072CA7596500A46046 /* Post.swift */,
+				A53A59072CA7596500A46046 /* Data.swift */,
 				A53A58EE2CA4B74400A46046 /* SwiftUIProjekt */,
 				A53A58ED2CA4B74400A46046 /* Products */,
 			);
@@ -71,7 +71,7 @@
 				A53A58F32CA4B74500A46046 /* Assets.xcassets */,
 				A53A58F52CA4B74500A46046 /* Preview Content */,
 				A53A59012CA60C0700A46046 /* InfoView.swift */,
-				A53A59032CA60C7700A46046 /* HelloView.swift */,
+				A53A59032CA60C7700A46046 /* QuizView.swift */,
 				A53A59052CA60CC200A46046 /* SettingsView.swift */,
 			);
 			path = SwiftUIProjekt;
@@ -157,8 +157,8 @@
 			files = (
 				A53A59062CA60CC200A46046 /* SettingsView.swift in Sources */,
 				A53A58F22CA4B74400A46046 /* ContentView.swift in Sources */,
-				A53A59042CA60C7700A46046 /* HelloView.swift in Sources */,
-				A53A59082CA7596500A46046 /* Post.swift in Sources */,
+				A53A59042CA60C7700A46046 /* QuizView.swift in Sources */,
+				A53A59082CA7596500A46046 /* Data.swift in Sources */,
 				A53A590A2CA9EC4500A46046 /* InfoRow.swift in Sources */,
 				A53A59022CA60C0700A46046 /* InfoView.swift in Sources */,
 				A53A590C2CA9F00500A46046 /* InfoDetails.swift in Sources */,

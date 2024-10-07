@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InfoDetails: View {
     
-    let post: Post
+    let post: Film
     
     var body: some View {
         ScrollView {
@@ -29,6 +29,6 @@ struct InfoDetails: View {
 
 struct InfoDetails_Previews: PreviewProvider {
     static var previews: some View {
-        InfoDetails(post: PostData.posts[1])
+        InfoDetails(post: FilmStore().films[1])
     }
 }

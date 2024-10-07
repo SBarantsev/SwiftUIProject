@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  Data.swift
 //  SwiftUIProjekt
 //
 //  Created by Sergey on 28.09.2024.
@@ -8,36 +8,37 @@
 import Foundation
 import SwiftUI
 
-struct Post {
+struct Film: Equatable {
     let id = UUID()
     let title: String
     let description: String
     let image: Image
+    var isWatched = false
 }
 
-struct PostData {
-    static let posts: [Post] = [
-        Post(
+class FilmStore: ObservableObject {
+    @Published var films: [Film] = [
+        Film(
             title: "Начало",
             description: "О чем: талантливый вор сновидений берется за невыполнимое задание",
             image: Image("ПостерНачало")
         ),
-        Post(
+        Film(
             title: "Сияние",
             description: "О чем: мрачная история смотрителя уединённого отеля, который сходит с ума",
             image: Image("ПостерСияние")
         ),
-        Post(
+        Film(
             title: "Побег из Шоушенка",
             description: "О чем: история простого заключённого, который не потерял веру в свободу",
             image: Image("ПостерПобегИзШоушенко")
         ),
-        Post(
+        Film(
             title: "Интерстеллар",
             description: "О чем: Мэтью МакКонахи спасает человечество через время и расстояния",
             image: Image("ПостерИнтерстеллар")
         ),
-        Post(
+        Film(
             title: "Отель «Гранд Будапешт»",
             description: "О чем: приключения служащих отеля на фоне потрясающих пейзажей",
             image: Image("ОтельГрандБудапешт")

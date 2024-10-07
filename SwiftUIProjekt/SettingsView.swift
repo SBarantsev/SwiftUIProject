@@ -64,7 +64,7 @@ struct SettingsView: View {
                     
                     Text("\(Int(rowHeight))")
                     if isEditing {
-                        InfoRow(post: PostData.posts[1], rowHeight: $rowHeight)
+                        InfoRow(post: FilmStore().films[1], rowHeight: $rowHeight)
                     }
                 }
             }

@@ -12,7 +12,7 @@ struct InfoView: View {
     var titleOn: Bool
     @Binding var rowHeight: Double
     
-    let posts: [Post]
+    let posts: [Film]
     
     var body: some View {
         
@@ -32,6 +32,6 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
 
     static var previews: some View {
-        InfoView(titleOn: false, rowHeight: .constant(40), posts: PostData.posts)
+        InfoView(titleOn: false, rowHeight: .constant(40), posts: FilmStore().films)
     }
 }
